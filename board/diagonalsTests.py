@@ -1,12 +1,27 @@
 from board import Board
 
-size = 10
+size = 3
 
 diag = Board(size, size)
 
-for row in range(size):
-    for col in range(size):
-        if diag.checkDiagonalsEquality(row, col):
-            diag.inputToCell(row, col, 'X')
+diag.inputToCell(0, 0, 'X')
+diag.inputToCell(1, 1, 'X')
+diag.inputToCell(2, 2, 'X')
 
 diag.printTable()
+
+if diag.checkDiagonalsEquality(1, 1):
+    print("yeah")
+else:
+    print("nop")
+
+diag.inputToCell(0, 2, 'X')
+diag.inputToCell(1, 1, 'X')
+diag.inputToCell(2, 0, 'X')
+
+diag.printTable()
+
+if diag.checkDiagonalsEquality(1, 1):
+    print("yeah")
+else:
+    print("nop")
