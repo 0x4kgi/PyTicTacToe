@@ -1,6 +1,3 @@
-from array import *
-
-
 class Board:
     def __init__(self, rowCount, columnCount):
         self.rows = rowCount
