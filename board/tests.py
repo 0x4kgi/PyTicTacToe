@@ -52,4 +52,4 @@ for row in range(10):
     d.inputToCell(row, 0, "a")
 d.printTable()
 print(f"Row 0 // {d.checkRowEquality(0)}")
-print(f"Column 0 // {d.checkColumnEquality(0)}")
+print(f"Column 0 // {d.checkColumnEquality(10)}")

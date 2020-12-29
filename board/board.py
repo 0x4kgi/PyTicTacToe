@@ -38,6 +38,10 @@ class Board:
     # def inputToCell
 
     def checkRowEquality(self, rowIndex):
+        if rowIndex >= self.rows:
+            print("Invalid row range")
+            return False
+
         row = self.table[rowIndex]
 
         if row.count(row[0]) == len(row):
@@ -48,6 +52,10 @@ class Board:
     # def checkRowEquality
 
     def checkColumnEquality(self, columnIndex):
+        if columnIndex >= self.columns:
+            print("Invalid column range")
+            return False
+
         base = self.table[0][columnIndex]
 
         for rowIndex in range(self.columns):
