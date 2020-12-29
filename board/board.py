@@ -76,6 +76,19 @@ class Board:
                 #print("Position not in the middle diagonals")
                 return False
 
+        base = self.table[checkX][checkY]
+        print(base)
+        if checkX == checkY:  # \ diagonals
+            for i in range(self.rows):
+                if base != self.table[i][i]:
+                    return False
+        else:  # / diagonals
+            for i in range(self.rows):
+                if base != self.table[i][(self.rows - 1) - i]:
+                    return False
+
+        # if
+
         return True
     # def checkDiagonalsEquality
 # class Board
