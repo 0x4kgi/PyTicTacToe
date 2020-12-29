@@ -65,4 +65,17 @@ class Board:
         return True
 
     # def checkColumnEquality
+
+    def checkDiagonalsEquality(self, checkX, checkY):
+        if self.rows != self.columns:
+            print("Board is not a square")
+            return False
+
+        if (checkX + checkY) != (self.rows - 1):
+            if checkX != checkY:
+                #print("Position not in the middle diagonals")
+                return False
+
+        return True
+    # def checkDiagonalsEquality
 # class Board
