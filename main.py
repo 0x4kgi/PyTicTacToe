@@ -4,12 +4,12 @@ class Board:
         self.columns = columnCount
         self.table = [["-"] * rowCount for _ in range(columnCount)]
 
-    # __init__
+    # def __init__
 
     def returnBoard(self):
         return self.table
 
-    # returnBoard
+    # def returnBoard
 
     def printTable(self):
         table = self.table
@@ -18,7 +18,7 @@ class Board:
             separator = " | "
             print("| " + separator.join(row) + " |")
 
-    # printTable
+    # def printTable
 
     def inputToCell(self, x, y, data, isIndexed=True):
         if x > self.rows:
@@ -35,7 +35,7 @@ class Board:
 
         self.table[x][y] = data
 
-    # inputToCell
+    # def inputToCell
 
     def checkRowEquality(self, rowIndex):
         row = self.table[rowIndex]
@@ -45,15 +45,33 @@ class Board:
 
         return False
 
-    # checkRowEquality
+    # def checkRowEquality
 
+    def checkColumnEquality(self, columnIndex):
+        base = self.table[0][columnIndex]
+
+        for rowIndex in range(self.columns):
+            if base != self.table[rowIndex][columnIndex]:
+                return False
+
+        return True
+
+    # def checkColumnEquality
+
+
+# class Board
+
+"""
+TESTS
+"""
 
 b = Board(3, 3)
 b.inputToCell(2, 2, "a")
 b.inputToCell(2, 1, "a")
 b.inputToCell(2, 0, "a")
-b.inputToCell(1, 0, "d")
-b.inputToCell(2, 0, "d")
-b.inputToCell(0, 0, "d")
+b.inputToCell(1, 0, "a")
+b.inputToCell(2, 0, "a")
+b.inputToCell(0, 0, "a")
 b.printTable()
 print(b.checkRowEquality(2))
+print(b.checkColumnEquality(0))
